@@ -1,0 +1,14 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  background-color: darkslateblue;
+  color: whitesmoke;
+  height: 50px;
+  align-items: center;
+  bottom: 0;
+  width: 100%;
+}
+.ml-2 {
+  margin-left: 0.5rem;
+}

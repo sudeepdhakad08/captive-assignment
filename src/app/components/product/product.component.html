@@ -1,0 +1,11 @@
+
+<div class="card-container" >
+<div class="card" *ngFor="let product of productDetails; let i = index">
+  <img [src]="product.image" class="card-img-top rounded float-start" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">{{product.category}}</p>
+    <a href="#" class="btn btn-primary">{{product.price}}</a>
+  </div>
+</div>
+</div>
