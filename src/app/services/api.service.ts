@@ -16,7 +16,7 @@ export class ApiService {
   }
 
   getAllproduct(): Observable<any> {
-    return this.httpClient.get(this.apiEndpoit+"products?limit=4")
+    return this.httpClient.get(this.apiEndpoit+"products")
     .pipe(catchError(this.handleError));
   }
 }
