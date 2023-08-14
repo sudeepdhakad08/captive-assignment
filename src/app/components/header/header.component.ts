@@ -28,6 +28,14 @@ export class HeaderComponent implements OnInit {
   changeCategories(event: any): void {
     if (event.target.value !== '') {
       this.commonservice.getCategory(event.target.value);
+      this.router.navigateByUrl('/');
+    }
+  }
+
+  onCustomizeProducts(ev: any): void {
+    if (ev.target.value !== '') {
+      this.commonservice.getCustomizeProduct(ev.target.value);
+      this.router.navigateByUrl('/customize-product');
     }
   }
 }

@@ -12,6 +12,9 @@ export class CommonService {
   category = new BehaviorSubject(null);
   category$ = this.category.asObservable();
 
+  customizeProduct = new BehaviorSubject(null);
+  customizeProduct$ = this.customizeProduct.asObservable();
+
   constructor() { }
 
   getProductId(id: any): void {
@@ -21,5 +24,9 @@ export class CommonService {
   getCategory(val: any): void {
    this.category.next(val);
   }
+
+  getCustomizeProduct(val: any): void {
+    this.customizeProduct.next(val);
+   }
 
 }

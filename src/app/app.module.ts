@@ -8,7 +8,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductComponent } from './components/product/product.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
-import { ProductDetailsComponent } from './components/product-details/product-details.component'
+import { ProductDetailsComponent } from './components/product-details/product-details.component';
+import { CustomizeProductComponent } from './components/customize-product/customize-product.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductDetailsComponent } from './components/product-details/product-de
     FooterComponent,
     ProductComponent,
     HomeComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CustomizeProductComponent
   ],
   imports: [
     BrowserModule,
