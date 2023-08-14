@@ -24,7 +24,6 @@ export class ProductDetailsComponent implements OnInit, OnDestroy {
   getProductId(): void {
     this.commonService.productId$.subscribe((resp) => {
       this.productId = resp;
-      this.commonService.productIdFlag = false;
       this.getProductData();
     });
   }

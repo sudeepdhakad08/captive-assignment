@@ -1,29 +1,64 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary main-header">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="../../../assets/images/flipkart.svg" alt="">
-      <div class="plus-logo" >
+      <img src="../../../assets/images/flipkart.svg" alt="" />
+      <div class="plus-logo">
         <span class="explore-text">Explore</span>
         <span class="plus-text">Plus</span>
-        <img src="../../../assets/images/plus-brand.svg" alt="">
+        <img src="../../../assets/images/plus-brand.svg" alt="" />
       </div>
     </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <form class="d-flex input-group" role="search">
-        <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-        <input class="form-control me-2" type="search" placeholder="Search for Products Brands or More">
+        <span class="input-group-text"
+          ><i class="fa-solid fa-magnifying-glass"></i
+        ></span>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search for Products Brands or More"
+        />
       </form>
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link max-width" href="#"><i class="mr-1 fa-solid fa-box icon-color"></i>Become a Seller</a>
+          <div class="select-list mr-1">
+            <select class="form-select" aria-label=".form-select-lg example">
+              <option selected>Prodcut Customizie</option>
+              <option value="1">Add Product</option>
+              <option value="2">Update Product</option>
+              <option value="3">DeleteProduct</option>
+            </select>
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <div class="select-list mr-1">
+            <select class="form-select" (change)="changeCategories($event)">
+              <option selected value="">Select Categories</option>
+              <option *ngFor="let catogary of categories">{{catogary}}</option>
+            </select>
+          </div>
         </li>
 
         <li class="nav-item">
           <div class="dropdown">
-            <button class="btn btn-outline-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button
+              class="btn btn-outline-primary dropdown-toggle"
+              type="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               <i class="fa-regular fa-user"></i>&nbsp;&nbsp;Sign In
             </button>
             <ul class="dropdown-menu">
@@ -36,10 +71,10 @@
 
         <li class="nav-item">
           <a class="nav-link max-width" href="#">
-            <i class="fa-solid fa-cart-shopping icon-color mr-1"></i>Cart</a>
+            <i class="fa-solid fa-cart-shopping icon-color mr-1"></i>Cart</a
+          >
         </li>
       </ul>
-
     </div>
   </div>
 </nav>

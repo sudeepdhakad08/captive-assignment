@@ -24,4 +24,14 @@ export class ApiService {
     return this.httpClient.get(this.apiEndpoit+"products"+"/"+id)
     .pipe(catchError(this.handleError));
   }
+
+  getCategories():Observable<any> {
+    return this.httpClient.get(this.apiEndpoit+"products/categories")
+    .pipe(catchError(this.handleError));
+  }
+
+  getProdcutCategory(cat: string): Observable<any> {
+    return this.httpClient.get(this.apiEndpoit+"products/category/"+cat)
+    .pipe(catchError(this.handleError));
+  }
 }

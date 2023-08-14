@@ -8,13 +8,18 @@ export class CommonService {
 
   productId = new BehaviorSubject(null);
   productId$ = this.productId.asObservable();
-  productIdFlag = false;
+
+  category = new BehaviorSubject(null);
+  category$ = this.category.asObservable();
 
   constructor() { }
 
   getProductId(id: any): void {
-    this.productIdFlag = true;
     this.productId.next(id);
+  }
+
+  getCategory(val: any): void {
+   this.category.next(val);
   }
 
 }

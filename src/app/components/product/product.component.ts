@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getAllProductsDetails();
+    this.getProductBasedOnCategory();
   }
 
   getAllProductsDetails(): void {
@@ -32,6 +33,20 @@ export class ProductComponent implements OnInit, OnDestroy {
   onProductClick(id: any): void {
     this.commonService.getProductId(id);
     this.router.navigateByUrl('/product-details');
+  }
+
+  getProductBasedOnCategory(): void {
+    this.commonService.category$.subscribe((resp) => {
+      if(resp !== null){
+       this.setProductBasedOnCategory(resp);
+      }
+    })
+  }
+
+  setProductBasedOnCategory(cat: string): void {
+    this.apiService.getProdcutCategory(cat).subscribe((resp) => {
+      this.productDetails = resp;
+    })
   }
 
   ngOnDestroy(): void {
