@@ -19,4 +19,9 @@ export class ApiService {
     return this.httpClient.get(this.apiEndpoit+"products")
     .pipe(catchError(this.handleError));
   }
+
+  getSingleProduct(id:any): Observable<any> {
+    return this.httpClient.get(this.apiEndpoit+"products"+"/"+id)
+    .pipe(catchError(this.handleError));
+  }
 }

@@ -1,6 +1,6 @@
 
 <div class="row-product">
-  <div class="column-product" *ngFor="let product of productDetails; let i = index">
+  <div class="column-product" *ngFor="let product of productDetails; let i = index" (click)="onProductClick(product.id)">
     <img [src]="product.image" class="product-image" alt="...">
     <h6 class="title">{{product.title}}</h6>
     <p style="color: darkolivegreen;">Price {{product.price | currency: 'INR'}}</p>

@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
+import { CommonService } from 'src/app/services/common.service';
 
 @Component({
   selector: 'app-product',
@@ -11,7 +13,8 @@ export class ProductComponent implements OnInit, OnDestroy {
   productDetails: any;
   subscription = new Subscription();
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private router: Router,
+    private commonService: CommonService) {}
 
   ngOnInit(): void {
     this.getAllProductsDetails();
@@ -26,6 +29,10 @@ export class ProductComponent implements OnInit, OnDestroy {
     );
   }
 
+  onProductClick(id: any): void {
+    this.commonService.getProductId(id);
+    this.router.navigateByUrl('/product-details');
+  }
 
   ngOnDestroy(): void {
     this.subscription?.unsubscribe();
