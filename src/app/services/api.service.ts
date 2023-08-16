@@ -36,17 +36,21 @@ export class ApiService {
   }
 
   addProduct(product: any): Observable<any> {
-    return this.httpClient.get(this.apiEndpoit+"products")
+    return this.httpClient.post(this.apiEndpoit+"products", {
+      body: JSON.stringify(product)
+    })
     .pipe(catchError(this.handleError));
   }
 
-  updateProduct(product: any): Observable<any> {
-    return this.httpClient.get(this.apiEndpoit+"products")
+  updateProduct(product: any,id: any): Observable<any> {
+    return this.httpClient.put(this.apiEndpoit+"products/"+id, {
+      body: JSON.stringify(product)
+    })
     .pipe(catchError(this.handleError));
   }
 
   deleteProduct(id: string): Observable<any> {
-    return this.httpClient.get(this.apiEndpoit+"products")
+    return this.httpClient.delete(this.apiEndpoit+"products/"+id)
     .pipe(catchError(this.handleError));
   }
 }
